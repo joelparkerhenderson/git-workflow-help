@@ -5,8 +5,8 @@ Git workflow is how we describe a team's preferred processes for  how to branch,
 Contents:
 * <a href="quick-start-best-practices">Quick start best practices</a>
 * <a href="discussion">Discussion and links</a>
-* <a name="tag-vs-branch">Tag vs. branch</a></h2>
-* <a href="release-branches">Release branches?</a>
+* <a href="release-branch">Release branch</a>
+* <a name="release-branch-or-release-tag">Release branch or release tag</a></h2>
 * <a href="git-log-as-a-history-book">Git log as a history book</a>
 * <a href="feature-flags">Feature flags</a>
 
@@ -63,7 +63,7 @@ Git alias code:
 Examples:
 
 * [A successful Git branching model - by Vincent Driessen](http://nvie.com/posts/a-successful-git-branching-model/)
-* [What are the problems with 'a successful Git branching model'?(https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/)
+* [What are the problems with 'a successful Git branching model'?](https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/)
 * [GitHub flow](https://guides.github.com/introduction/flow/)
 * [GitLab flow](https://about.gitlab.com/2014/09/29/gitlab-flow/)
 * [Atlassian simple git workflow](https://www.atlassian.com/blog/git/simple-git-workflow-simple)
@@ -119,21 +119,20 @@ Merge vs. rebase ideas:
 * Git log gardening a.k.a. hand-editing by a historian
 
 
-<h2><a name="tag-vs-branche">Tag vs. branch</a></h2>
+<h2><a name="release-branch">Release branch</a></h2>
 
-To mark a release, you could create a release archive, or release tag, or release branch.
-
-GitHub automatically interprets tags created on the master branch as being releases, and even creates tar acrhive files with the branch's contents.
-
-
-<h2><a name="release-branches">Release branches?</a></h2>
-
-<h3>Yes because of polishing</h3>
+<h3>A. Yes because of polishing</h3>
 
 I do like to keep release branches to isolate the polishing of the release from other development work.
 
 Without release branches, teams tend to have a code freeze, which is unnecessary with a release branch.
 
+
+<h2><a name="release-branch-or-release-tag">Release branch or release tag</a></h2>
+
+To mark a release, you could create a release archive, or release tag, or release branch.
+
+GitHub automatically interprets tags created on the master branch as being releases, and even creates tar acrhive files with the branch's contents.
 
 
 <h2><a name="comments">Comments</a></h2>
@@ -165,12 +164,14 @@ So it's digitally signed to the extent that your account/identity is recorded in
 
 <h3>Merge from master back to your topic branch</h3>
 
+By <a href="https://news.ycombinator.com/user?id=gregmac">gregmac</a>
+
 This is how my team handles merge conflicts: your branch must cleanly merge for the pull request to be approved (which means you must resolve conflicts in your branch first). If there are two branches that may conflict in terms of functionality (but not at a source level) we call that out, and have the people involved reviewing both. When it comes time to merge, we usually merge the first one done to master, merge master to the second, then do extra testing in the second branch before merging it.
 
 Sometimes if we know one branch blocks the other, we simply merge one to the other, but then still go to master separately. This makes the pull request review much simpler and keeps the code isolated while not duplicating effort. This works best when a big bug has a quick and simple but incomplete fix, and a more risky and complex but complete fix, or when there's multiple aspects to a new feature. We can decide to ship the first branch earlier if necessary.
 
 
-<h2><a name="merge-vs-rebase">Merge vs. rebase/a></h2>
+<h2><a name="merge-vs-rebase">Merge vs. rebase</a></h2>
 
 Q. Anyone want to weigh in on merge commits?
 
@@ -178,7 +179,7 @@ Q. Anyone want to weigh in on merge commits?
 
   * On the other hand, this seems pretty terrible from a `git log` perspective, since many commits are WIP. But maybe it's not a big deal. My bigger concern is that merge commits provide real context: whenever you merge a topic branch into master, it seems to make sense to have a merge commit for that entire operation. But wouldn't that cause `git bisect` to always point to that merge commit rather than one of the smaller commits?
 
-  * A. I always advocate workflows where merges never happen.
+  * A. I always advocate workflows where merges never happen. -[shandor](https://news.ycombinator.com/user?id=shandor)
 
     * To me, the 'git log' of a master branch is like a history book about the repository.
 
@@ -203,7 +204,7 @@ A. Use both.
 
 <h2><a name="git-log-as-a-history-book">Git log as a history book</a></h2>
 
-A. I'm not sold on the idea of the master log as a readable narrative.
+A. I'm not sold on the idea of the master log as a readable narrative. -[mbrock](https://news.ycombinator.com/user?id=mbrock)
 
   * If you really want to maintain such a narrative, it would be possible to do it separately, in something like a changelog.
 
