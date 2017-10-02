@@ -3,12 +3,12 @@
 Git workflow is how we describe a team's preferred processes for  how to branch, publish, revise, and maintain code.
 
 Contents:
-* <a href="quick-start-best-practices">Quick start best practices</a>
-* <a href="discussion">Discussion and links</a>
-* <a href="release-branch">Release branch</a>
-* <a name="release-branch-or-release-tag">Release branch or release tag</a></h2>
-* <a href="git-log-as-a-history-book">Git log as a history book</a>
-* <a href="feature-flags">Feature flags</a>
+* <a href="#quick-start-best-practices">Quick start best practices</a>
+* <a href="#discussion">Discussion and links</a>
+* <a href="#release-branch">Release branch</a>
+* <a name="#release-branch-or-release-tag">Release branch or release tag</a></h2>
+* <a href="#git-log-as-a-history-book">Git log as a history book</a>
+* <a href="#feature-flags">Feature flags</a>
 
 
 <h2><a name="quick-start-best-practices">Quick start best practices</a></h2>
