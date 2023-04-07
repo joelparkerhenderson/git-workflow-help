@@ -23,7 +23,7 @@ Contents:
 Quick start for people who want the fastest-possible best practices for typical teams:
 
 1. Aim for the master branch to always be working.
-2. Do all development in topic branches: feature branches, bugfix branches, refactor branches, etc.
+2. Do all development in topic branches: feature branches, bug fix branches, refactor branches, etc.
 3. Use automation such as CI/CD to integrate topic branches into the master branch.
 
 Development workflow:
